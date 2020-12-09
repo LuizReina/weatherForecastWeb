@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="weatherStyle.css">
+</head>
+<body>
+  <header>
+    <label for="choose-city">Digite uma cidade:</label>
+    <input type="text" id="choose-city">
+    <button id="submit-city">Confirmar</button>
+  </header>
+  <main class="container">
+    <section class="today-info">
+      <div class="city-name">
+        <p id="name-id"></p>
+      </div>
+      <div class="city-temperature">
+        <p id="temperature-id"></p>
+      </div>
+      <div class="other-infos">
+        <p id="infos"></p>
+      </div>
+    </section>
+    <section id="next-days-id" class="next-days-info">      
+    </section>
+  </main>
+  <script src="weather.js"></script>
+</body>
+</html>
