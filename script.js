@@ -29,8 +29,6 @@ const appendResults = (data) => {
 
   otherInfos.innerText = `Vento: ${wind_speedy}
   Humidade: ${humidity}%`;
-
-  console.log(data.results);
 }
 
 const appendForecast = (data) => {
@@ -45,26 +43,29 @@ const appendForecast = (data) => {
 }
 
 const fetchWheater = (cityCode) => {
-  fetch(`https://api.hgbrasil.com/weather?key=2207bfed&format=json-cors&city_name=${cityCode}`)
+  fetch(`https://api.hgbrasil.com/weather?key=2207bfed&format=json-cors&woeid=${cityCode}`)
   .then((response) => {
     response.json().then((data) => {
+      if (data.error === true) return alert('Sem dados para retorno: limite de consultas de cidades excedido.');
       appendResults(data);
       appendForecast(data);
     })
   })
+  .catch((error) => alert("Máximo de requisições atingido! Tente novamente mais tarde!"));
 }
 
 const fetchWheaterByIp = () => {
   fetch(`https://api.hgbrasil.com/weather?key=2207bfed&format=json-cors&user_ip=remote`)
   .then((response) => {
     response.json().then((data) => {
+      if (data.error === true) return alert('Sem dados para retorno: limite de consultas de cidades excedido.');
       appendResults(data);
       appendForecast(data);
     })
   })
 }
 
-submitCity.addEventListener('click', (event) => {
+submitCity.addEventListener('click', () => {
   const input = document.getElementById('choose-city');
   fetchWheater(input.value);
 });
