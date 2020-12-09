@@ -1,5 +1,7 @@
 ## Weather Forecast Web
 
+Acesse: https://luizreina.github.io/weatherForecastWeb/
+
 Projeto feito com integração à uma API de previsão do tempo.
 Front-end simples, foco em utilizar os conhecimentos adquiridos.
 
