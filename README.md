@@ -5,8 +5,8 @@ Front-end simples, foco em utilizar os conhecimentos adquiridos.
 
 Veja na prática: https://luizreina.github.io/weatherForecastWeb/
 
-Referências:
+## Referências:
 
-API utilizada: https://console.hgbrasil.com/documentation/weather
+- API utilizada: https://console.hgbrasil.com/documentation/weather
 
 #vqv
