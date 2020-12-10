@@ -42,8 +42,8 @@ const appendForecast = (data) => {
   });
 }
 
-const fetchWheater = (cityCode) => {
-  fetch(`https://api.hgbrasil.com/weather?key=2207bfed&format=json-cors&woeid=${cityCode}`)
+const fetchWheater = (cityName) => {
+  fetch(`https://api.hgbrasil.com/weather?key=2207bfed&format=json-cors&city_name=${cityName}`)
   .then((response) => {
     response.json().then((data) => {
       if (data.error === true) return alert('Sem dados para retorno: limite de consultas de cidades excedido.');
@@ -51,7 +51,6 @@ const fetchWheater = (cityCode) => {
       appendForecast(data);
     })
   })
-  .catch((error) => alert("Máximo de requisições atingido! Tente novamente mais tarde!"));
 }
 
 const fetchWheaterByIp = () => {
